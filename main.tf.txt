@@ -14,7 +14,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "CloudBlitzlab" {
-  ami = "lookup(var.my_ami, var.region)
+  ami = lookup(var.my_ami, var.region)
   key_name = var.key_name
   instance_type = "t2.micro"
   tags = {
